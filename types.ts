@@ -16,3 +16,10 @@ export interface Review {
 export interface AiResponse {
   advice: string;
 }
+
+export interface ChatMessage {
+  id: string;
+  role: 'user' | 'assistant';
+  text: string;
+  timestamp: Date;
+}

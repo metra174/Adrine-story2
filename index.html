@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
+        darkMode: 'class', // Enable class-based dark mode
         theme: {
           extend: {
             fontFamily: {
@@ -39,6 +40,10 @@
     <style>
       html { scroll-behavior: smooth; }
       
+      body {
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
       /* Seleção de texto luxuosa */
       ::selection {
         background-color: #D4AF37;
@@ -51,6 +56,9 @@
       }
       ::-webkit-scrollbar-track {
         background: #f1f1f1;
+      }
+      .dark ::-webkit-scrollbar-track {
+        background: #292524;
       }
       ::-webkit-scrollbar-thumb {
         background: #D4AF37;
@@ -72,7 +80,7 @@
 }
 </script>
 </head>
-  <body class="bg-stone-50 text-stone-800 font-sans antialiased selection:bg-brand-gold selection:text-white">
+  <body class="bg-stone-50 text-stone-800 font-sans antialiased selection:bg-brand-gold selection:text-white dark:bg-stone-950 dark:text-stone-100">
     <div id="root"></div>
   </body>
 </html>

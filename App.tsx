@@ -7,6 +7,7 @@ import { AiStylist } from './components/AiStylist';
 import { Features } from './components/Features';
 import { Testimonials } from './components/Testimonials';
 import { Footer } from './components/Footer';
+import { ChatWidget } from './components/ChatWidget';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Features />
       <Testimonials />
       <Footer />
+      <ChatWidget />
     </div>
   );
 }
