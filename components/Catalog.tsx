@@ -102,7 +102,7 @@ const products: Product[] = [
 ];
 
 export const Catalog: React.FC = () => {
-  const whatsappNumber = "950124243";
+  const whatsappNumber = "244950124243";
 
   return (
     <section id="catalogo" className="py-24 bg-stone-50 dark:bg-stone-950 transition-colors">

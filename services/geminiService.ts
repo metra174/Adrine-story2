@@ -10,7 +10,7 @@ const STORE_CONTEXT = `
   - Produtos: Saltos finos, sandálias, socas de luxo, scarpins.
   - Faixa de Preço: Entre 12.000 Kz a 35.000 Kz.
   - Entrega: Taxa fixa de 2.000 Kz para toda Luanda (Entrega Imediata).
-  - WhatsApp para compra: 950 124 243.
+  - WhatsApp para compra: +244 950 124 243.
   - Estilo: Elegante, sofisticado, feminino.
   
   DIRETRIZES DE RESPOSTA:
@@ -59,6 +59,6 @@ export const sendMessageToAgent = async (message: string, history: string[]): Pr
     return response.text || "Desculpe, não entendi. Pode repetir?";
   } catch (error) {
     console.error("Error in chat agent:", error);
-    return "Estou com muitas clientes agora. Por favor, chame no WhatsApp 950 124 243.";
+    return "Estou com muitas clientes agora. Por favor, chame no WhatsApp +244 950 124 243.";
   }
 };

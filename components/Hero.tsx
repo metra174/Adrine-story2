@@ -2,7 +2,7 @@ import React from 'react';
 import { ShoppingBag, MessageCircle } from 'lucide-react';
 
 export const Hero: React.FC = () => {
-  const whatsappNumber = "950124243";
+  const whatsappNumber = "244950124243";
 
   return (
     <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden bg-stone-900">

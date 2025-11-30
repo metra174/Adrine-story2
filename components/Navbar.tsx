@@ -59,7 +59,7 @@ export const Navbar: React.FC = () => {
           </button>
 
           <a 
-            href="https://wa.me/950124243" 
+            href="https://wa.me/244950124243" 
             className={buttonClasses}
           >
             Fale Conosco
@@ -92,7 +92,7 @@ export const Navbar: React.FC = () => {
            </button>
           <a href="#sobre" className="text-stone-900 dark:text-white font-serif text-2xl" onClick={() => setIsOpen(false)}>Quem Somos</a>
           <a href="#catalogo" className="text-stone-900 dark:text-white font-serif text-2xl" onClick={() => setIsOpen(false)}>Catálogo</a>
-          <a href="https://wa.me/950124243" className="bg-stone-900 text-white dark:bg-white dark:text-stone-900 px-10 py-4 uppercase tracking-widest" onClick={() => setIsOpen(false)}>
+          <a href="https://wa.me/244950124243" className="bg-stone-900 text-white dark:bg-white dark:text-stone-900 px-10 py-4 uppercase tracking-widest" onClick={() => setIsOpen(false)}>
             Fale Conosco
           </a>
         </div>
