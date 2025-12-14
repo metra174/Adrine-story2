@@ -1,23 +1,46 @@
-import React from 'react';
-import { ShoppingBag, MessageCircle, ChevronRight } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { MessageCircle, ChevronRight } from 'lucide-react';
+
+const HERO_IMAGES = [
+  "https://i.imgur.com/cL8P8Zb.jpeg",
+  "https://i.imgur.com/lhTypBv.jpeg",
+  "https://i.imgur.com/yccN1GK.jpeg"
+];
 
 export const Hero: React.FC = () => {
   const whatsappNumber = "244925412200";
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % HERO_IMAGES.length);
+    }, 5000); // Troca a imagem a cada 5 segundos
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden bg-brand-black">
-      {/* Background Image with Luxury Grade Gradient */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1596704017254-9b121068fb31?q=80&w=1920&auto=format&fit=crop" 
-          alt="Cael Fashion Luxury Background" 
-          className="w-full h-full object-cover object-[center_30%] animate-[scale_30s_ease-in-out_infinite_alternate]"
-          onError={(e) => e.currentTarget.style.display = 'none'}
-        />
-        {/* Gradiente dramático para sofisticação e leitura */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/30"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80"></div>
-      </div>
+      
+      {/* Background Images Slider */}
+      {HERO_IMAGES.map((img, index) => (
+        <div 
+          key={index}
+          className={`absolute inset-0 z-0 transition-opacity duration-1000 ease-in-out ${
+            index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+          }`}
+        >
+          <img 
+            src={img} 
+            alt={`Cael Fashion Exclusive Look ${index + 1}`} 
+            className="w-full h-full object-cover object-top"
+          />
+        </div>
+      ))}
+
+      {/* Gradientes para garantir leitura do texto (Overlays) */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+      <div className="absolute inset-0 z-0 bg-gradient-to-r from-black/70 via-transparent to-black/70"></div>
 
       <div className="relative z-10 text-center px-6 max-w-6xl mx-auto animate-fade-up flex flex-col items-center">
         

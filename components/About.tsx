@@ -16,14 +16,14 @@ export const About: React.FC = () => {
           <div className="w-full lg:w-1/2 relative">
             <div className="grid grid-cols-2 gap-4">
                <img 
-                src="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?auto=format&fit=crop&q=80&w=400" 
-                alt="Woman in Black" 
-                className="w-full h-80 object-cover mt-12 shadow-2xl"
+                src="https://i.imgur.com/cL8P8Zb.jpeg" 
+                alt="Woman in Cael Fashion Dress" 
+                className="w-full h-80 object-cover object-top mt-12 shadow-2xl"
               />
                <img 
-                src="https://images.unsplash.com/photo-1566737236500-c8ac43014a67?auto=format&fit=crop&q=80&w=400" 
-                alt="Luxury Fabric" 
-                className="w-full h-80 object-cover shadow-2xl"
+                src="https://i.imgur.com/yccN1GK.jpeg" 
+                alt="Luxury Cael Fashion Detail" 
+                className="w-full h-80 object-cover object-top shadow-2xl"
               />
             </div>
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white dark:bg-brand-black p-8 shadow-xl border border-brand-gold/20 text-center min-w-[200px]">

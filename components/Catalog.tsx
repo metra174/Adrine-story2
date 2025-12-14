@@ -2,13 +2,18 @@ import React from 'react';
 import { Product } from '../types';
 import { MessageCircle, ArrowRight, Instagram } from 'lucide-react';
 
+// Imagens fornecidas
+const IMG_1 = "https://i.imgur.com/cL8P8Zb.jpeg";
+const IMG_2 = "https://i.imgur.com/lhTypBv.jpeg";
+const IMG_3 = "https://i.imgur.com/yccN1GK.jpeg";
+
 const products: Product[] = [
   {
     id: 1,
     name: "Vestido Gala Noir",
     category: "Black Collection 🖤",
     price: "Sob Consulta",
-    image: "https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&q=80&w=800",
+    image: IMG_1,
     description: "Sofisticação absoluta para noites inesquecíveis."
   },
   {
@@ -16,7 +21,7 @@ const products: Product[] = [
     name: "Red Velvet Dress",
     category: "Red Collection ❤️",
     price: "Sob Consulta",
-    image: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&q=80&w=800",
+    image: IMG_2,
     description: "Poder e sensualidade em cada detalhe."
   },
   {
@@ -24,7 +29,7 @@ const products: Product[] = [
     name: "Renda Branca Luxo",
     category: "White Edition 🕊️",
     price: "Sob Consulta",
-    image: "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&q=80&w=800",
+    image: IMG_3,
     description: "Delicadeza com acabamento premium."
   },
   {
@@ -32,7 +37,7 @@ const products: Product[] = [
     name: "Cael Sunglasses VIP",
     category: "Acessórios 🕶️",
     price: "Sob Consulta",
-    image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&q=80&w=800",
+    image: IMG_1,
     description: "O toque final para um look de impacto."
   },
   {
@@ -40,7 +45,7 @@ const products: Product[] = [
     name: "Midi Dress Gold",
     category: "Golden Hour ✨",
     price: "Sob Consulta",
-    image: "https://images.unsplash.com/photo-1596704017286-07449c258d4a?auto=format&fit=crop&q=80&w=800",
+    image: IMG_2,
     description: "Brilho discreto para eventos diurnos."
   },
   {
@@ -48,7 +53,7 @@ const products: Product[] = [
     name: "Conjunto Alfaiataria",
     category: "Casual Chic 💼",
     price: "Sob Consulta",
-    image: "https://images.unsplash.com/photo-1549570186-6ff377fa11c5?auto=format&fit=crop&q=80&w=800",
+    image: IMG_3,
     description: "Elegância e poder para o ambiente corporativo."
   },
   {
@@ -56,7 +61,7 @@ const products: Product[] = [
     name: "Clutch Diamond",
     category: "Acessórios 💎",
     price: "Sob Consulta",
-    image: "https://images.unsplash.com/photo-1566812328246-15024b33342d?auto=format&fit=crop&q=80&w=800",
+    image: IMG_1,
     description: "Detalhes que fazem toda a diferença."
   },
   {
@@ -64,7 +69,7 @@ const products: Product[] = [
     name: "Look Cliente Real",
     category: "Cael Girls 🌟",
     price: "Inspiração",
-    image: "https://images.unsplash.com/photo-1605763240004-7e93b172d754?auto=format&fit=crop&q=80&w=800",
+    image: IMG_2,
     description: "Nossas clientes brilhando com Cael Fashion."
   }
 ];
@@ -94,7 +99,7 @@ export const Catalog: React.FC = () => {
                 <img 
                   src={product.image} 
                   alt={product.name} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 object-top"
                   onError={(e) => e.currentTarget.style.display = 'none'}
                 />
                 
