@@ -1,88 +1,87 @@
 import React from 'react';
-import { Truck, CheckCircle, Star } from 'lucide-react';
+import { Star, Globe, ShieldCheck } from 'lucide-react';
 
 export const About: React.FC = () => {
   return (
-    <section id="sobre" className="py-24 relative overflow-hidden bg-brand-rose/30 dark:bg-stone-900">
-      {/* Decorative Elements to fix "plain pink screen" */}
-      <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-         <svg width="100%" height="100%">
-            <pattern id="pattern-circles" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-              <circle cx="2" cy="2" r="1" className="text-stone-800 dark:text-brand-gold" fill="currentColor" />
-            </pattern>
-            <rect x="0" y="0" width="100%" height="100%" fill="url(#pattern-circles)" />
-         </svg>
-      </div>
-      
-      {/* Watermark Text */}
-      <div className="absolute -bottom-10 -right-10 text-[10rem] md:text-[15rem] font-serif font-bold text-white dark:text-white/5 opacity-40 select-none pointer-events-none leading-none">
-        LUXURY
+    <section className="py-24 relative overflow-hidden bg-white dark:bg-black">
+      {/* Decorative Text */}
+      <div className="absolute top-1/2 -translate-y-1/2 -left-20 text-[8rem] md:text-[12rem] font-serif font-bold text-stone-100 dark:text-white/5 opacity-60 select-none pointer-events-none rotate-90 leading-none whitespace-nowrap">
+        CAEL BOUTIQUE
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+        <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
           
-          {/* Image Side */}
-          <div className="w-full lg:w-1/2">
-            <div className="relative">
-              <div className="absolute -top-4 -left-4 w-full h-full border-2 border-stone-800 dark:border-brand-gold z-0"></div>
-              <img 
-                src="https://images.unsplash.com/photo-1550614000-4b9519e0926f?q=80&w=800&auto=format&fit=crop" 
-                alt="Adrine Story Collection" 
-                className="relative z-10 w-full h-auto shadow-2xl object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-500"
-                onError={(e) => e.currentTarget.style.display = 'none'}
+          {/* Image Side - Composition */}
+          <div className="w-full lg:w-1/2 relative">
+            <div className="grid grid-cols-2 gap-4">
+               <img 
+                src="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?auto=format&fit=crop&q=80&w=400" 
+                alt="Woman in Black" 
+                className="w-full h-80 object-cover mt-12 shadow-2xl"
               />
-              <div className="absolute -bottom-6 -right-6 bg-brand-gold p-6 text-white shadow-lg hidden md:block">
-                <p className="font-serif text-2xl font-bold">Desde 2024</p>
-                <p className="text-xs uppercase tracking-widest">Elegância Angolana</p>
-              </div>
+               <img 
+                src="https://images.unsplash.com/photo-1566737236500-c8ac43014a67?auto=format&fit=crop&q=80&w=400" 
+                alt="Luxury Fabric" 
+                className="w-full h-80 object-cover shadow-2xl"
+              />
+            </div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white dark:bg-brand-black p-8 shadow-xl border border-brand-gold/20 text-center min-w-[200px]">
+              <span className="text-4xl font-serif text-brand-gold block mb-2">+7.400</span>
+              <span className="text-xs uppercase tracking-widest text-stone-500 dark:text-stone-400">Mulheres Confiam</span>
             </div>
           </div>
 
           {/* Text Side */}
           <div className="w-full lg:w-1/2">
-            <div className="inline-block border-b-2 border-brand-gold mb-4 pb-1">
-               <h2 className="text-xs font-bold tracking-[0.3em] text-stone-500 dark:text-stone-400 uppercase">Quem Somos</h2>
+            <div className="mb-6">
+               <h2 className="text-xs font-bold tracking-[0.3em] text-brand-gold uppercase mb-4">Sobre a Marca</h2>
+               <h3 className="text-4xl md:text-5xl font-serif text-brand-black dark:text-white mb-6 leading-tight">
+                 Mais que Moda, <br />
+                 <span className="italic">Um Estado de Espírito.</span>
+               </h3>
             </div>
-            <h3 className="text-4xl md:text-5xl font-serif text-stone-900 dark:text-white mb-8">ADRINE STORY</h3>
             
             <p className="text-stone-600 dark:text-stone-300 mb-8 leading-relaxed text-lg font-light">
-              Somos uma loja especializada em moda feminina, com destaque em <strong className="text-stone-900 dark:text-brand-gold">saltos finos, sandálias, socas e calçados modernos</strong>. Trabalhamos com produtos selecionados, excelente acabamento e modelos que valorizam a elegância da mulher angolana.
+              Na <strong className="text-brand-black dark:text-brand-gold">Cael Fashion Boutique</strong>, não vendemos apenas roupas. Entregamos confiança, glamour e exclusividade. Nossa curadoria é pensada para a mulher moderna que não aceita nada menos que o extraordinário.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4 mb-10">
-              <ul className="space-y-4">
-                {['Saltos finos de vários estilos', 'Sandálias modernas', 'Socas elegantes'].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-stone-700 dark:text-stone-300">
-                    <span className="w-5 h-5 rounded-full bg-stone-200 dark:bg-stone-800 flex items-center justify-center">
-                        <CheckCircle size={12} className="text-stone-800 dark:text-brand-gold" />
-                    </span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <ul className="space-y-4">
-                {['Tendências atualizadas', 'Produtos selecionados', 'Qualidade Garantida'].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-stone-700 dark:text-stone-300">
-                     <span className="w-5 h-5 rounded-full bg-stone-200 dark:bg-stone-800 flex items-center justify-center">
-                        <Star size={12} className="text-stone-800 dark:text-brand-gold" />
-                    </span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="bg-white dark:bg-stone-800 p-6 border-l-4 border-stone-800 dark:border-brand-gold shadow-sm transition-colors">
+            <div className="space-y-6">
               <div className="flex items-start gap-4">
-                <div className="p-3 bg-stone-100 dark:bg-stone-700 rounded-full">
-                    <Truck size={24} className="text-stone-800 dark:text-white" />
+                <div className="bg-stone-50 dark:bg-stone-900 p-3 rounded-sm border border-brand-gold/30">
+                  <Star size={24} className="text-brand-gold" />
                 </div>
                 <div>
-                  <p className="font-bold text-lg text-stone-900 dark:text-white">Entrega Imediata</p>
-                  <p className="text-stone-600 dark:text-stone-400">Taxa fixa de <span className="font-bold text-brand-gold">2.000 Kz</span> para toda Luanda.</p>
+                  <h4 className="font-bold text-brand-black dark:text-white mb-1">Peças Exclusivas e Selecionadas</h4>
+                  <p className="text-sm text-stone-500 dark:text-stone-400">Coleções limitadas para garantir que você seja única em qualquer evento.</p>
                 </div>
               </div>
+
+              <div className="flex items-start gap-4">
+                 <div className="bg-stone-50 dark:bg-stone-900 p-3 rounded-sm border border-brand-gold/30">
+                  <Globe size={24} className="text-brand-gold" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-brand-black dark:text-white mb-1">Envio Nacional e Internacional</h4>
+                  <p className="text-sm text-stone-500 dark:text-stone-400">Levamos a elegância da Cael para Luanda e para o mundo.</p>
+                </div>
+              </div>
+
+               <div className="flex items-start gap-4">
+                 <div className="bg-stone-50 dark:bg-stone-900 p-3 rounded-sm border border-brand-gold/30">
+                  <ShieldCheck size={24} className="text-brand-gold" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-brand-black dark:text-white mb-1">Qualidade Premium</h4>
+                  <p className="text-sm text-stone-500 dark:text-stone-400">Tecidos nobres, cortes impecáveis e acabamento de alto padrão.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-10">
+               <a href="https://wa.me/244925412200" className="text-brand-black dark:text-white font-bold border-b-2 border-brand-gold pb-1 hover:text-brand-gold transition-colors text-sm tracking-widest uppercase">
+                 Conheça nossa História
+               </a>
             </div>
           </div>
         </div>

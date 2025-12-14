@@ -1,27 +1,26 @@
 import React from 'react';
-import { Award, Clock, Heart, Zap } from 'lucide-react';
+import { Truck, Gem, HeartHandshake, Globe } from 'lucide-react';
 
 export const Features: React.FC = () => {
   return (
-    <section className="py-20 bg-white dark:bg-stone-900 transition-colors">
+    <section id="diferenciais" className="py-20 bg-brand-black text-white">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <span className="text-brand-gold font-bold tracking-widest text-xs uppercase mb-2 block">Diferenciais</span>
-          <h2 className="text-3xl md:text-4xl font-serif text-stone-900 dark:text-white">Por Que Escolher a ADRINE STORY</h2>
-          <div className="w-24 h-1 bg-brand-gold mx-auto mt-4"></div>
+          <span className="text-brand-gold font-bold tracking-[0.2em] text-xs uppercase mb-2 block">Diferenciais Cael</span>
+          <h2 className="text-3xl md:text-4xl font-serif text-white">Por Que a Cael é Sua Melhor Escolha</h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-stone-800 border border-stone-800">
           {[
-            { icon: <Award size={36} />, title: "Qualidade Premium", desc: "Produtos selecionados com acabamento impecável." },
-            { icon: <Heart size={36} />, title: "Modelos Modernos", desc: "Curadoria de estilo para todas as ocasiões." },
-            { icon: <Zap size={36} />, title: "Entrega Rápida", desc: "Receba em Luanda por apenas 2.000 Kz." },
-            { icon: <Clock size={36} />, title: "Atendimento VIP", desc: "Suporte personalizado e ágil via WhatsApp." },
+            { icon: <Gem size={32} />, title: "Exclusividade", desc: "Peças únicas que você não encontra em outro lugar." },
+            { icon: <Globe size={32} />, title: "Envio Global", desc: "Entrega segura para todo o país e exterior." },
+            { icon: <HeartHandshake size={32} />, title: "Atendimento VIP", desc: "Suporte personalizado via WhatsApp." },
+            { icon: <Truck size={32} />, title: "Rapidez", desc: "Logística eficiente para você receber logo." },
           ].map((feature, idx) => (
-            <div key={idx} className="bg-stone-50 dark:bg-stone-800 p-8 text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-transparent hover:border-brand-rose/50 dark:hover:border-brand-gold/30 rounded-sm">
-              <div className="text-brand-gold flex justify-center mb-6">{feature.icon}</div>
-              <h3 className="font-serif font-bold text-xl mb-3 text-stone-900 dark:text-white">{feature.title}</h3>
-              <p className="text-stone-600 dark:text-stone-300 leading-relaxed">{feature.desc}</p>
+            <div key={idx} className="bg-brand-black p-10 text-center hover:bg-stone-900 transition-colors duration-300 group">
+              <div className="text-stone-500 group-hover:text-brand-gold transition-colors duration-300 flex justify-center mb-6">{feature.icon}</div>
+              <h3 className="font-serif font-bold text-lg mb-3 text-white">{feature.title}</h3>
+              <p className="text-stone-400 text-sm leading-relaxed">{feature.desc}</p>
             </div>
           ))}
         </div>

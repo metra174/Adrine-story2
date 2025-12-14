@@ -1,156 +1,128 @@
 import React from 'react';
 import { Product } from '../types';
-import { MessageCircle, ArrowRight } from 'lucide-react';
+import { MessageCircle, ArrowRight, Instagram } from 'lucide-react';
 
 const products: Product[] = [
   {
     id: 1,
-    name: "Salto Fino Royal",
-    category: "Saltos Finos ✨",
-    price: "18.000 Kz",
-    image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&q=80&w=600",
-    description: "Elegância pura para jantares."
+    name: "Vestido Gala Noir",
+    category: "Black Collection 🖤",
+    price: "Sob Consulta",
+    image: "https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&q=80&w=800",
+    description: "Sofisticação absoluta para noites inesquecíveis."
   },
   {
     id: 2,
-    name: "Sandália Verão Chic",
-    category: "Sandálias 👡",
-    price: "14.500 Kz",
-    image: "https://images.unsplash.com/photo-1560343090-f0409e92791a?auto=format&fit=crop&q=80&w=600",
-    description: "Conforto para o dia a dia."
+    name: "Red Velvet Dress",
+    category: "Red Collection ❤️",
+    price: "Sob Consulta",
+    image: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&q=80&w=800",
+    description: "Poder e sensualidade em cada detalhe."
   },
   {
     id: 3,
-    name: "Soca de Luxo Gold",
-    category: "Socas 👠",
-    price: "16.000 Kz",
-    image: "https://images.unsplash.com/photo-1581100904036-a67816048d0b?auto=format&fit=crop&q=80&w=600",
-    description: "Toque moderno e dourado."
+    name: "Renda Branca Luxo",
+    category: "White Edition 🕊️",
+    price: "Sob Consulta",
+    image: "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&q=80&w=800",
+    description: "Delicadeza com acabamento premium."
   },
   {
     id: 4,
-    name: "Scarpin Verniz Red",
-    category: "Clássicos ❤️",
-    price: "22.000 Kz",
-    image: "https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&q=80&w=600",
-    description: "Poder para mulheres fortes."
+    name: "Cael Sunglasses VIP",
+    category: "Acessórios 🕶️",
+    price: "Sob Consulta",
+    image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&q=80&w=800",
+    description: "O toque final para um look de impacto."
   },
   {
     id: 5,
-    name: "Sandália Gladiadora",
-    category: "Sandálias 👡",
-    price: "15.000 Kz",
-    image: "https://images.unsplash.com/photo-1635773172085-79bbd27dc621?auto=format&fit=crop&q=80&w=600",
-    description: "Estilo ousado e fresco."
+    name: "Midi Dress Gold",
+    category: "Golden Hour ✨",
+    price: "Sob Consulta",
+    image: "https://images.unsplash.com/photo-1596704017286-07449c258d4a?auto=format&fit=crop&q=80&w=800",
+    description: "Brilho discreto para eventos diurnos."
   },
   {
     id: 6,
-    name: "Mule Elegance",
-    category: "Conforto ☁️",
-    price: "12.000 Kz",
-    image: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&q=80&w=600",
-    description: "Praticidade sem perder o charme."
+    name: "Conjunto Alfaiataria",
+    category: "Casual Chic 💼",
+    price: "Sob Consulta",
+    image: "https://images.unsplash.com/photo-1549570186-6ff377fa11c5?auto=format&fit=crop&q=80&w=800",
+    description: "Elegância e poder para o ambiente corporativo."
   },
   {
     id: 7,
-    name: "Salto Bloco Nude",
-    category: "Dia a Dia 💼",
-    price: "19.500 Kz",
-    image: "https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?auto=format&fit=crop&q=80&w=600",
-    description: "Ideal para o escritório."
+    name: "Clutch Diamond",
+    category: "Acessórios 💎",
+    price: "Sob Consulta",
+    image: "https://images.unsplash.com/photo-1566812328246-15024b33342d?auto=format&fit=crop&q=80&w=800",
+    description: "Detalhes que fazem toda a diferença."
   },
   {
     id: 8,
-    name: "Sandalha Festa Prata",
-    category: "Festa ✨",
-    price: "24.000 Kz",
-    image: "https://images.unsplash.com/photo-1535043934128-cf0b28d52f95?auto=format&fit=crop&q=80&w=600",
-    description: "Brilhe a noite toda."
-  },
-  {
-    id: 9,
-    name: "Peep Toe Clássico",
-    category: "Clássicos 🖤",
-    price: "21.000 Kz",
-    image: "https://images.unsplash.com/photo-1511556820780-d912e42b4980?auto=format&fit=crop&q=80&w=600",
-    description: "Atemporal e sofisticado."
-  },
-  {
-    id: 10,
-    name: "Anabela Tropical",
-    category: "Verão ☀️",
-    price: "13.500 Kz",
-    image: "https://images.unsplash.com/photo-1574677228833-2866443d0460?auto=format&fit=crop&q=80&w=600",
-    description: "Leveza para dias quentes."
-  },
-  {
-    id: 11,
-    name: "Stiletto Preto",
-    category: "Saltos Finos 👠",
-    price: "25.000 Kz",
-    image: "https://images.unsplash.com/photo-1620247656209-a784d16d0043?auto=format&fit=crop&q=80&w=600",
-    description: "O básico indispensável."
-  },
-  {
-    id: 12,
-    name: "Sandália Trançada",
-    category: "Tendência 🔥",
-    price: "17.000 Kz",
-    image: "https://images.unsplash.com/photo-1647460982766-0d19f6a62f83?auto=format&fit=crop&q=80&w=600",
-    description: "O hit da temporada."
+    name: "Look Cliente Real",
+    category: "Cael Girls 🌟",
+    price: "Inspiração",
+    image: "https://images.unsplash.com/photo-1605763240004-7e93b172d754?auto=format&fit=crop&q=80&w=800",
+    description: "Nossas clientes brilhando com Cael Fashion."
   }
 ];
 
 export const Catalog: React.FC = () => {
-  const whatsappNumber = "244950124243";
+  const whatsappNumber = "244925412200";
 
   return (
-    <section id="catalogo" className="py-24 bg-stone-50 dark:bg-stone-950 transition-colors">
+    <section id="colecoes" className="py-24 bg-stone-50 dark:bg-brand-dark transition-colors relative">
+       {/* Background Decoration */}
+       <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-black to-transparent opacity-10 pointer-events-none"></div>
+
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-serif text-brand-black dark:text-white mb-6">Galeria de Estilo</h2>
-          <p className="text-stone-500 dark:text-stone-400 max-w-xl mx-auto text-lg font-light">
-            Explore nossa coleção completa. Preços especiais e entrega imediata em Luanda.
+          <span className="text-brand-gold font-bold tracking-[0.3em] text-xs uppercase mb-3 block">Exclusividade</span>
+          <h2 className="text-4xl md:text-5xl font-serif text-brand-black dark:text-white mb-6">O Seu Próximo Look Exclusivo</h2>
+          <div className="w-20 h-1 bg-brand-gold mx-auto mb-8"></div>
+          <p className="text-stone-500 dark:text-stone-400 max-w-xl mx-auto text-lg font-light leading-relaxed">
+            Navegue por nossas coleções curadas: Black, Red, Looks das Clientes e Acessórios de Luxo.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {products.map((product) => (
-            <div key={product.id} className="group bg-white dark:bg-stone-900 p-3 md:p-4 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 rounded-sm border border-stone-100 dark:border-stone-800">
-              <div className="relative overflow-hidden mb-4 aspect-[3/4] bg-stone-100 dark:bg-stone-800">
+            <div key={product.id} className="group bg-white dark:bg-black/50 p-0 shadow-sm hover:shadow-[0_10px_40px_rgba(0,0,0,0.1)] transition-all duration-500 hover:-translate-y-2 border border-stone-200 dark:border-stone-800">
+              <div className="relative overflow-hidden aspect-[3/4]">
                 <img 
                   src={product.image} 
                   alt={product.name} 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   onError={(e) => e.currentTarget.style.display = 'none'}
                 />
-                <div className="absolute top-2 right-2 bg-white/90 backdrop-blur-sm px-2 py-1 text-xs font-bold text-stone-900 shadow-sm">
-                  {product.price}
-                </div>
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                
+                {/* Overlay on Hover */}
+                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-4 p-4">
+                   <span className="text-brand-gold font-serif text-2xl italic">{product.name}</span>
                    <a 
-                    href={`https://wa.me/${whatsappNumber}?text=Olá, gostei do ${product.name} (${product.price}) que vi no site.`}
+                    href={`https://wa.me/${whatsappNumber}?text=Olá, me interessei pelo ${product.name} da coleção Cael.`}
                     target="_blank"
                     rel="noreferrer"
-                    className="bg-white text-stone-900 px-4 py-2 md:px-6 md:py-3 font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 hover:bg-brand-gold hover:text-white uppercase tracking-wider text-xs md:text-sm"
+                    className="bg-white text-black px-6 py-3 font-bold uppercase tracking-wider text-xs hover:bg-brand-gold hover:text-white transition-colors transform translate-y-4 group-hover:translate-y-0 duration-300"
                   >
-                    Ver no WhatsApp
+                    Consultar Preço
                   </a>
                 </div>
               </div>
               
-              <div className="text-center px-1">
-                <span className="text-[10px] font-bold text-brand-gold uppercase tracking-[0.2em]">{product.category}</span>
-                <h3 className="text-lg md:text-xl font-serif text-stone-900 dark:text-stone-100 mt-1 mb-1 truncate">{product.name}</h3>
-                <p className="text-xs md:text-sm text-stone-500 dark:text-stone-400 mb-3 italic font-light pb-3 border-b border-stone-100 dark:border-stone-800">{product.description}</p>
+              <div className="p-6 text-center border-t border-stone-100 dark:border-stone-800">
+                <span className="text-[10px] font-bold text-brand-gold uppercase tracking-[0.2em] mb-2 block">{product.category}</span>
+                <h3 className="text-xl font-serif text-stone-900 dark:text-stone-100 mb-2">{product.name}</h3>
                 <a 
-                  href={`https://wa.me/${whatsappNumber}?text=Quero comprar o ${product.name}`}
+                  href={`https://wa.me/${whatsappNumber}?text=Quero saber mais sobre o ${product.name}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 text-stone-800 dark:text-stone-200 font-bold text-xs md:text-sm hover:text-brand-gold dark:hover:text-brand-gold transition-colors group-hover:gap-3"
+                  className="inline-flex items-center gap-2 text-stone-500 dark:text-stone-400 hover:text-brand-black dark:hover:text-white transition-colors text-sm font-bold border-b border-transparent hover:border-brand-gold pb-0.5 mt-2"
                 >
                   <MessageCircle size={14} />
-                  COMPRAR {product.price}
+                  VER NO WHATSAPP
                 </a>
               </div>
             </div>
@@ -158,12 +130,25 @@ export const Catalog: React.FC = () => {
         </div>
         
         <div className="mt-20 text-center">
-          <a 
-            href={`https://wa.me/${whatsappNumber}`}
-            className="inline-flex items-center gap-3 px-12 py-5 bg-stone-900 dark:bg-white text-white dark:text-stone-900 text-lg font-bold hover:bg-brand-gold dark:hover:bg-brand-gold hover:text-white transition-colors shadow-xl tracking-widest uppercase rounded-sm"
-          >
-            Falar com Vendedora <ArrowRight size={20} />
-          </a>
+          <p className="text-stone-500 dark:text-stone-400 mb-6 italic">Gostaria de ver mais opções exclusivas?</p>
+          <div className="flex flex-col md:flex-row justify-center gap-4">
+             <a 
+              href={`https://wa.me/${whatsappNumber}`}
+              className="inline-flex items-center justify-center gap-3 px-10 py-4 bg-brand-black dark:bg-white text-white dark:text-black text-sm font-bold hover:bg-brand-gold dark:hover:bg-brand-gold hover:text-white transition-colors shadow-lg tracking-[0.2em] uppercase"
+            >
+              <MessageCircle size={18} />
+              Catálogo Completo
+            </a>
+            <a 
+              href="https://instagram.com/cael_fashion_boutique1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-3 px-10 py-4 border border-brand-black dark:border-stone-700 text-brand-black dark:text-white text-sm font-bold hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors tracking-[0.2em] uppercase"
+            >
+              <Instagram size={18} />
+              Seguir no Instagram
+            </a>
+          </div>
         </div>
       </div>
     </section>

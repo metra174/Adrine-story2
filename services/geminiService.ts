@@ -4,21 +4,23 @@ import { GoogleGenAI } from "@google/genai";
 const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 const STORE_CONTEXT = `
-  Você é a 'Adrine', a assistente virtual elegante da loja 'ADRINE STORY' em Luanda, Angola.
+  Você é a assistente virtual exclusiva da 'Cael Fashion Boutique', uma marca de moda feminina de luxo.
   
-  DADOS DA LOJA:
-  - Produtos: Saltos finos, sandálias, socas de luxo, scarpins.
-  - Faixa de Preço: Entre 12.000 Kz a 35.000 Kz.
-  - Entrega: Taxa fixa de 2.000 Kz para toda Luanda (Entrega Imediata).
-  - WhatsApp para compra: +244 950 124 243.
-  - Estilo: Elegante, sofisticado, feminino.
+  DADOS DA MARCA:
+  - Nome: Cael Fashion Boutique.
+  - Foco: Glamour, Sofisticação, Exclusividade.
+  - Produtos: Vestidos de gala, looks Red & Black, Renda branca, Acessórios premium, Óculos de sol.
+  - Público: Mulheres que querem se destacar (eventos de luxo, jantares, casual sofisticado).
+  - Instagram: @cael_fashion_boutique1
+  - WhatsApp: +244 925 412 200.
+  - Envio: Nacional (Angola) e Internacional.
   
   DIRETRIZES DE RESPOSTA:
-  1. Seja muito educada, use emojis elegantes (✨, 👠, 🛍️).
-  2. Responda perguntas sobre moda, preços e entregas.
-  3. Se perguntarem preço exato de um item específico que você não vê, dê a faixa de preço média e peça para mandar foto no WhatsApp.
-  4. Sempre tente direcionar para o WhatsApp para fechar a venda.
-  5. Mantenha respostas curtas e úteis.
+  1. Tom de voz: Luxuoso, confiante, acolhedor e extremamente educado.
+  2. Use emojis sofisticados (✨, 🥂, 🖤, 💎).
+  3. Se perguntarem preços, convide para ver o catálogo no WhatsApp para um atendimento personalizado.
+  4. Enfatize a exclusividade das peças.
+  5. Objetivo final: Levar a cliente para o WhatsApp +244 925 412 200.
 `;
 
 export const getFashionAdvice = async (occasion: string): Promise<string> => {
@@ -26,25 +28,23 @@ export const getFashionAdvice = async (occasion: string): Promise<string> => {
     const model = 'gemini-2.5-flash';
     const response = await ai.models.generateContent({
       model: model,
-      contents: `O cliente perguntou: "Tenho o seguinte evento/ocasião: ${occasion}. O que devo calçar?"`,
+      contents: `O cliente perguntou: "Tenho o seguinte evento/ocasião: ${occasion}. O que devo vestir da Cael Fashion Boutique?"`,
       config: {
-        systemInstruction: STORE_CONTEXT + "\nFoque em sugerir o calçado ideal para a ocasião.",
+        systemInstruction: STORE_CONTEXT + "\nFoque em sugerir um look glamouroso e exclusivo (ex: vestido preto, look vermelho impactante, renda sofisticada).",
         temperature: 0.7,
       }
     });
 
-    return response.text || "Desculpe, estou ajustando meus sapatos no momento. Tente novamente!";
+    return response.text || "Um momento, estou selecionando a peça perfeita para você brilhar.";
   } catch (error) {
     console.error("Error fetching fashion advice:", error);
-    return "Nossa consultora virtual está indisponível no momento.";
+    return "Nossa consultora de estilo está atendendo uma cliente exclusiva. Tente novamente em instantes.";
   }
 };
 
 export const sendMessageToAgent = async (message: string, history: string[]): Promise<string> => {
   try {
     const model = 'gemini-2.5-flash';
-    // Format history for context context, though strictly generateContent is stateless, 
-    // passing strictly previous context helps simple turns.
     const prompt = `Histórico da conversa:\n${history.join('\n')}\n\nCliente: ${message}`;
 
     const response = await ai.models.generateContent({
@@ -56,9 +56,9 @@ export const sendMessageToAgent = async (message: string, history: string[]): Pr
       }
     });
 
-    return response.text || "Desculpe, não entendi. Pode repetir?";
+    return response.text || "Perdão, não compreendi. Poderia repetir?";
   } catch (error) {
     console.error("Error in chat agent:", error);
-    return "Estou com muitas clientes agora. Por favor, chame no WhatsApp +244 950 124 243.";
+    return "Para um atendimento imediato e exclusivo, por favor, chame no WhatsApp +244 925 412 200.";
   }
 };

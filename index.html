@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ADRINE STORY | Elegância Feminina</title>
+    <title>Cael Fashion Boutique | Glamour & Elegância</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <script>
@@ -17,20 +17,26 @@
             },
             colors: {
               brand: {
-                gold: '#D4AF37',
+                gold: '#D4AF37', // Classic Gold
                 goldLight: '#F3E5AB',
-                black: '#1A1A1A',
-                rose: '#F5E6E8',
-                accent: '#9F8189'
+                black: '#0A0A0A', // Deep Black
+                dark: '#121212', // Soft Black
+                creme: '#F5F5F0', // Off-white/Creme
+                accent: '#E5E5E5'
               }
             },
             animation: {
               'fade-up': 'fadeUp 0.8s ease-out forwards',
+              'fade-in': 'fadeIn 1s ease-out forwards',
             },
             keyframes: {
               fadeUp: {
                 '0%': { opacity: '0', transform: 'translateY(20px)' },
                 '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
               }
             }
           }
@@ -52,17 +58,14 @@
       
       /* Barra de rolagem personalizada */
       ::-webkit-scrollbar {
-        width: 8px;
+        width: 6px;
       }
       ::-webkit-scrollbar-track {
-        background: #f1f1f1;
-      }
-      .dark ::-webkit-scrollbar-track {
-        background: #292524;
+        background: #0A0A0A;
       }
       ::-webkit-scrollbar-thumb {
         background: #D4AF37;
-        border-radius: 4px;
+        border-radius: 0px;
       }
       ::-webkit-scrollbar-thumb:hover {
         background: #b5952f;
@@ -82,7 +85,7 @@
 }
 </script>
 </head>
-  <body class="bg-stone-50 text-stone-800 font-sans antialiased selection:bg-brand-gold selection:text-white dark:bg-stone-950 dark:text-stone-100">
+  <body class="bg-stone-50 text-stone-900 font-sans antialiased selection:bg-brand-gold selection:text-white dark:bg-brand-black dark:text-brand-creme">
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
   </body>

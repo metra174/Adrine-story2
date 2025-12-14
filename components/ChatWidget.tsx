@@ -9,7 +9,7 @@ export const ChatWidget: React.FC = () => {
     {
       id: 'welcome',
       role: 'assistant',
-      text: 'Olá! Sou a Adrine, sua assistente virtual. Como posso ajudar você hoje? ✨',
+      text: 'Olá! Bem-vinda à Cael Fashion Boutique. ✨ Como posso ajudar a encontrar seu look exclusivo hoje?',
       timestamp: new Date()
     }
   ]);
@@ -41,7 +41,7 @@ export const ChatWidget: React.FC = () => {
     setIsLoading(true);
 
     // Build history for context
-    const history = messages.map(m => `${m.role === 'user' ? 'Cliente' : 'Adrine'}: ${m.text}`);
+    const history = messages.map(m => `${m.role === 'user' ? 'Cliente' : 'Cael Assistant'}: ${m.text}`);
     
     const responseText = await sendMessageToAgent(userMessage.text, history);
 
@@ -61,17 +61,17 @@ export const ChatWidget: React.FC = () => {
       
       {/* Chat Window */}
       {isOpen && (
-        <div className="bg-white dark:bg-stone-900 w-[350px] h-[500px] mb-4 rounded-xl shadow-2xl flex flex-col overflow-hidden border border-brand-gold/20 animate-fade-up transition-colors">
+        <div className="bg-white dark:bg-stone-900 w-[350px] h-[500px] mb-4 rounded-sm shadow-2xl flex flex-col overflow-hidden border border-brand-gold/20 animate-fade-up transition-colors">
           {/* Header */}
-          <div className="bg-stone-900 dark:bg-stone-950 p-4 flex justify-between items-center text-white border-b border-stone-800">
+          <div className="bg-brand-black p-5 flex justify-between items-center text-white border-b border-stone-800">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-brand-gold flex items-center justify-center text-stone-900">
+              <div className="w-10 h-10 rounded-full bg-brand-gold flex items-center justify-center text-black shadow-lg">
                 <Sparkles size={20} />
               </div>
               <div>
-                <h3 className="font-serif font-bold">Adrine Virtual</h3>
-                <p className="text-xs text-stone-400 flex items-center gap-1">
-                  <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span> Online agora
+                <h3 className="font-serif font-bold tracking-wide">Cael Assistant</h3>
+                <p className="text-[10px] text-brand-gold uppercase tracking-widest flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span> Online
                 </p>
               </div>
             </div>
@@ -81,17 +81,17 @@ export const ChatWidget: React.FC = () => {
           </div>
 
           {/* Messages Area */}
-          <div className="flex-1 p-4 overflow-y-auto bg-stone-50 dark:bg-stone-900 space-y-4 scrollbar-thin">
+          <div className="flex-1 p-4 overflow-y-auto bg-stone-50 dark:bg-black space-y-4 scrollbar-thin">
             {messages.map((msg) => (
               <div 
                 key={msg.id} 
                 className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
               >
                 <div 
-                  className={`max-w-[80%] p-3 rounded-2xl text-sm leading-relaxed shadow-sm ${
+                  className={`max-w-[85%] p-4 text-sm leading-relaxed shadow-sm ${
                     msg.role === 'user' 
-                      ? 'bg-stone-800 text-white rounded-br-none' 
-                      : 'bg-white dark:bg-stone-800 text-stone-800 dark:text-stone-200 border border-brand-gold/20 rounded-bl-none'
+                      ? 'bg-brand-black text-white rounded-tl-xl rounded-bl-xl rounded-tr-xl' 
+                      : 'bg-white dark:bg-stone-800 text-stone-800 dark:text-stone-200 border border-brand-gold/20 rounded-tr-xl rounded-br-xl rounded-tl-xl'
                   }`}
                 >
                   {msg.text}
@@ -100,7 +100,7 @@ export const ChatWidget: React.FC = () => {
             ))}
             {isLoading && (
               <div className="flex justify-start">
-                <div className="bg-white dark:bg-stone-800 p-3 rounded-2xl rounded-bl-none shadow-sm border border-stone-100 dark:border-stone-700">
+                <div className="bg-white dark:bg-stone-800 p-3 rounded-tr-xl rounded-br-xl rounded-tl-xl shadow-sm border border-stone-100 dark:border-stone-700">
                   <Loader2 size={16} className="animate-spin text-brand-gold" />
                 </div>
               </div>
@@ -114,13 +114,13 @@ export const ChatWidget: React.FC = () => {
               type="text"
               value={inputText}
               onChange={(e) => setInputText(e.target.value)}
-              placeholder="Digite sua dúvida..."
-              className="flex-1 bg-stone-100 dark:bg-stone-800 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-brand-gold text-stone-800 dark:text-white transition-colors placeholder:text-stone-400"
+              placeholder="Pergunte sobre um look..."
+              className="flex-1 bg-stone-100 dark:bg-black rounded-sm px-4 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-brand-gold text-stone-800 dark:text-white transition-colors placeholder:text-stone-400 border border-transparent focus:border-brand-gold/30"
             />
             <button 
               type="submit" 
               disabled={isLoading || !inputText.trim()}
-              className="bg-brand-gold text-white p-2 rounded-full hover:bg-stone-900 dark:hover:bg-white dark:hover:text-stone-900 transition-colors disabled:opacity-50"
+              className="bg-brand-black text-white p-3 rounded-sm hover:bg-brand-gold hover:text-black transition-colors disabled:opacity-50"
             >
               <Send size={18} />
             </button>
@@ -131,9 +131,9 @@ export const ChatWidget: React.FC = () => {
       {/* Toggle Button */}
       <button 
         onClick={() => setIsOpen(!isOpen)}
-        className="w-14 h-14 bg-brand-gold text-white rounded-full shadow-[0_4px_20px_rgba(212,175,55,0.4)] flex items-center justify-center hover:bg-stone-900 dark:hover:bg-stone-100 dark:hover:text-stone-900 hover:scale-110 transition-all duration-300 group"
+        className="w-16 h-16 bg-brand-gold text-black rounded-full shadow-[0_4px_30px_rgba(212,175,55,0.5)] flex items-center justify-center hover:bg-white hover:scale-110 transition-all duration-300 group z-50"
       >
-        {isOpen ? <X size={24} /> : <MessageSquareText size={24} className="group-hover:animate-bounce" />}
+        {isOpen ? <X size={28} /> : <MessageSquareText size={28} className="group-hover:animate-bounce" />}
       </button>
     </div>
   );
